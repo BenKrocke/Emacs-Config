@@ -19,6 +19,8 @@
   (global-display-line-numbers-mode)
   (setq display-line-numbers-type 'relative)
   (keymap-global-set "C-k" 'crux-kill-whole-line)
+  (keymap-global-set "C-M-g" 'eglot-code-actions)
+  (keymap-global-set "M-z" 'zap-up-to-char)
   (keymap-global-set "C-<return>" 'crux-smart-open-line)
   (keymap-global-set "C-S-<return>" 'crux-smart-open-line-above)
   (keymap-global-set "C-c k" 'crux-kill-other-buffers)
@@ -42,8 +44,6 @@
 
 (use-package marginalia
   :ensure t
-  :bind (:map minibuffer-local-map
-              ("M-A" . marginalia-cycle))
   :custom
   (marginalia-annotators '(marginalia-annotators-heavy marginalia-annotators-light nil))
   :init
